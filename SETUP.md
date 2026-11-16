@@ -1,15 +1,12 @@
-# Updating from the first version
-Upload everything in `public/` again (including the new `config.js` and `exercises.json`), then paste your Firebase values into `config.js`. After that, future updates never need re-pasting. Reload the app twice.
-
 # Ironlog setup (about 20 minutes)
 
 ## 1. Firebase project
 1. console.firebase.google.com -> Add project (free Spark plan is fine).
-2. Project settings -> Your apps -> Web (</>) -> register. Copy the config values into `public/config.js` (this one file holds all your keys).
+2. Project settings -> Your apps -> Web (</>) -> register. Copy the config into `public/index.html` (top of the script, `cfg`).
 3. Build -> Authentication -> Sign-in method -> enable **Google**.
    Then Settings -> Authorized domains -> add the domain you will host on.
 4. Build -> Firestore Database -> Create (production mode) -> Rules tab -> paste `firestore.rules` -> Publish.
-5. Project settings -> Cloud Messaging -> Web Push certificates -> Generate key pair. Paste the public key into `VAPID` in `public/config.js`.
+5. Project settings -> Cloud Messaging -> Web Push certificates -> Generate key pair. Paste the public key into `VAPID` in `public/index.html`.
 
 ## 2. Host it (pick one, HTTPS is required)
 - **Shared hosting:** upload everything inside `public/` to a folder or subdomain that has SSL. Done.
